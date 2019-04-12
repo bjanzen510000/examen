@@ -52,12 +52,11 @@ form.addEventListener('submit', function(event) {
 
     stripe.createSource(idealBank, sourceData).then(function(result) {
         if (result.error) {
-            // Geeft een error als er iets fout is met iDeal.
+            // Geeft een error als er iets fout is gegaan
             errorMessage.textContent = result.error.message;
             errorMessage.classList.add('visible');
 
         } else {
-            // Redirect de bezoeker naar de URL ( homepagina )
             errorMessage.classList.remove('visible');
             stripeSourceHandler(result.source);
         }
@@ -65,6 +64,6 @@ form.addEventListener('submit', function(event) {
 });
 
 function stripeSourceHandler(source) {
-    // Redirect de bezoeker naar de URL ( homepagina )
+    // Redirect de bezoeker naar de URL
     document.location.href = source.redirect.url;
 }
