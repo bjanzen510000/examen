@@ -39,7 +39,7 @@ function pollForSourceStatus() {
                 // Als de betaling gelukt is, Geef een melding en redirect de bezoeker naar de homepagina.
                 success: function () {
                     alert('Hartelijk dank, uw betaling is geslaagd.');
-                    window.location.replace("https://www.bjornjanzen.nl/");
+                    window.location.replace("http://127.0.0.1:8000/");
 
                 }
             });
@@ -51,7 +51,7 @@ function pollForSourceStatus() {
         } else {
             // Alert dat betaling is mislukt, wordt doorgestuurd naar de home pagina.
             alert('Uw betaling is mislukt. U wordt doorgestuurd naar de Home Pagina');
-            window.location.replace("https://www.bjornjanzen.nl/");
+            window.location.replace("http://127.0.0.1:8000/");
         }
     });
 }
