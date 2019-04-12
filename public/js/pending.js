@@ -1,14 +1,16 @@
+// Zet de Test API key voor Stripe.
 var stripe = Stripe('pk_test_9Pe4K2yIgEEsuNcATvXiH78600vPkb2ERJ');
 
-// Na enige tijd stopt de request.
+// Na enige tijd stopt de request
 var MAX_POLL_COUNT = 10;
 var pollCount = 0;
 
 function get(name){
     if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search))
         return decodeURIComponent(name[1]);
+    // Decodes de URI
 }
-
+// Haalt de informatie uit de bataling op.
 console.log(get('source'));
 function pollForSourceStatus() {
     stripe.retrieveSource({id: get('source'), client_secret: get('client_secret')}).then(function(result) {
@@ -24,7 +26,7 @@ function pollForSourceStatus() {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
                 data: {
-                    // Data van de betaling
+                    // Data van de betaling, wat in de database moet.
                     client_id: source.id,
                     name: source.owner.name,
                     amount: source.amount,

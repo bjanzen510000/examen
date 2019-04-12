@@ -6,7 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateChargesTable extends Migration
 {
-    /**Runt en maakt de migrations */
+    /**Runt en maakt de migrations, deze worden naar de database verstuurd.*/
     public function up()
     {
         Schema::create('charges', function (Blueprint $table) {

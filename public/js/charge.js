@@ -2,7 +2,7 @@ var stripe = Stripe('pk_test_9Pe4K2yIgEEsuNcATvXiH78600vPkb2ERJ');
 
 var elements = stripe.elements();
 
-// opmaak
+// Opmaak / Styling
 var style = {
     base: {
         padding: '10px 12px',
@@ -57,7 +57,7 @@ form.addEventListener('submit', function(event) {
             errorMessage.classList.add('visible');
 
         } else {
-            // Redirect de bezoeker naar de URL
+            // Redirect de bezoeker naar de URL ( homepagina )
             errorMessage.classList.remove('visible');
             stripeSourceHandler(result.source);
         }
@@ -65,6 +65,6 @@ form.addEventListener('submit', function(event) {
 });
 
 function stripeSourceHandler(source) {
-    // Redirect de bezoeker naar de URL.
+    // Redirect de bezoeker naar de URL ( homepagina )
     document.location.href = source.redirect.url;
 }
