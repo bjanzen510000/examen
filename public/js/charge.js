@@ -45,7 +45,7 @@ form.addEventListener('submit', function(event) {
         },
         // De url waar de klant heen gaat na de betaling
         redirect: {
-            return_url: 'http://127.0.0.1:8000/charge',
+            return_url: 'https://www.bjornjanzen.nl/charge',
         },
     };
 
